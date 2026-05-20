@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Modelfile — Sabiá-7B (Maritaca AI) configurado para o ChatCapitu.
+#
+# Pré-requisitos:
+#   1. Baixe o GGUF do Sabiá-7B (variante Q5_1) a partir do Hugging Face
+#      ou de outra fonte autorizada da Maritaca AI.
+#   2. Coloque o arquivo em `./models/sabia7b-q5_1.gguf` (relativo à raiz
+#      do projeto).
+#   3. Crie o modelo no Ollama executando:
+#         ollama create sabia7b -f Modelfile
+#
+# Os parâmetros aqui definidos servem como default sensato. A biblioteca
+# query.py sobrescreve esses valores em runtime via `additional_kwargs`,
+# mantendo este arquivo como referência e fallback seguro caso o modelo
+# seja invocado diretamente (`ollama run sabia7b "..."`).
+# ─────────────────────────────────────────────────────────────────────────────
+
+FROM ./models/sabia7b-q5_1.gguf
+
+# ── Parâmetros de geração ─────────────────────────────────────────────────────
+PARAMETER temperature   0.3      # baixa para respostas factuais e fundamentadas
+PARAMETER top_p         0.9
+PARAMETER repeat_penalty 1.2     # mitiga loops; valor calibrado durante o TCC
+PARAMETER num_ctx       2048     # janela de contexto nativa do Sabiá-7B
+PARAMETER num_predict   500      # limite de tokens da resposta
+
+# ── Stop tokens ───────────────────────────────────────────────────────────────
+# Interrompem a geração ao tentar abrir novas seções estruturais do prompt
+# (mecanismo defensivo contra continuações indevidas e prompt-injection
+# por continuação textual — ver docs/SEGURANCA.md).
+PARAMETER stop "\n\nPergunta"
+PARAMETER stop "\nPergunta:"
+PARAMETER stop "\n\nAluno:"
+PARAMETER stop "\nAluno:"
+PARAMETER stop "\n\nProfessor:"
+PARAMETER stop "\nProfessor:"
+PARAMETER stop "\n\nTrechos"
+PARAMETER stop "\n###"

@@ -14,17 +14,12 @@ from llama_index.core import VectorStoreIndex, StorageContext, Document
 from llama_index.core.settings import Settings
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
+import config
+
 logger = logging.getLogger(__name__)
 
-DEFAULT_DATASET = os.environ.get(
-    "DATASET_PATH", "dom_casmurro_anotado_com_criticos.json"
-)
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-STORAGE_DIR = "storage"
-CACHE_DIR = "./cache"
 
-
-def carregar_paragrafos(path: str = DEFAULT_DATASET) -> list[Document]:
+def carregar_paragrafos(path: str = config.DATASET_PATH) -> list[Document]:
     """
     Lê o JSON do dataset e converte cada parágrafo em um Document do LlamaIndex.
 
@@ -76,25 +71,25 @@ def carregar_paragrafos(path: str = DEFAULT_DATASET) -> list[Document]:
 
 def verificar_ou_criar_indice(force: bool = False) -> None:
     """
-    Garante que o índice vetorial existe em ``STORAGE_DIR``.
+    Garante que o índice vetorial existe em ``config.STORAGE_DIR``.
 
     Se já existir, retorna imediatamente. Caso contrário, lê o dataset,
     gera embeddings e persiste o índice.
     """
-    if os.path.exists(STORAGE_DIR) and not force:
+    if os.path.exists(config.STORAGE_DIR) and not force:
         return
 
-    logger.info("Criando índice vetorial em '%s'...", STORAGE_DIR)
+    logger.info("Criando índice vetorial em '%s'...", config.STORAGE_DIR)
     Settings.embed_model = HuggingFaceEmbedding(
-        model_name=EMBEDDING_MODEL,
+        model_name=config.EMBEDDING_MODEL,
         device="cpu",
-        cache_folder=CACHE_DIR,
+        cache_folder=config.EMBEDDING_CACHE_DIR,
     )
 
     docs = carregar_paragrafos()
     logger.info("Indexando %d documentos...", len(docs))
     index = VectorStoreIndex.from_documents(docs)
-    index.storage_context.persist(persist_dir=STORAGE_DIR)
+    index.storage_context.persist(persist_dir=config.STORAGE_DIR)
     logger.info("Índice criado com sucesso.")
 
 

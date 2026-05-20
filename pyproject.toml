@@ -1,0 +1,77 @@
+[project]
+name = "chatcapitu"
+version = "1.0.0"
+description = "RAG assistant for critical interpretation of Dom Casmurro by Machado de Assis"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Flávia Mariane Neme Chacon" }
+]
+keywords = [
+    "rag",
+    "retrieval-augmented-generation",
+    "llm",
+    "portuguese-nlp",
+    "machado-de-assis",
+    "dom-casmurro",
+    "literary-analysis",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+dependencies = [
+    "streamlit>=1.28.0",
+    "llama-index>=0.10.0",
+    "llama-index-core>=0.10.0",
+    "llama-index-embeddings-huggingface>=0.2.0",
+    "llama-index-llms-ollama>=0.10.0",
+    "llama-index-llms-openai>=0.2.0",
+    "chromadb>=0.4.18",
+    "sentence-transformers>=2.2.2",
+    "torch>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[project.urls]
+Repository = "https://github.com/nemechacon/chat-capitu"
+Documentation = "https://github.com/nemechacon/chat-capitu/blob/main/docs/ARQUITETURA.md"
+
+# ─── pytest ───────────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"
+
+# ─── ruff (linter + formatter) ────────────────────────────────────────────────
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+# Conjunto curado de regras — segue boas práticas sem ser opressivo
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # bugbear
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (gerenciado pelo formatter)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E402"]

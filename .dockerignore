@@ -1,0 +1,32 @@
+# ── Ambientes Python ──────────────────────────────────────────────────────────
+venv/
+.venv/
+capitu-venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ── Caches e estado local ─────────────────────────────────────────────────────
+cache/
+storage/
+.streamlit/secrets.toml
+.python-version
+.env
+
+# ── Modelos LLM (rodam no host via Ollama, não no container) ──────────────────
+*.gguf
+*.bin
+*.safetensors
+models/
+
+# ── Notebooks e drafts ────────────────────────────────────────────────────────
+notebooks/
+
+# ── Git ───────────────────────────────────────────────────────────────────────
+.git/
+.gitignore
+.github/
+
+# ── Sistema ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

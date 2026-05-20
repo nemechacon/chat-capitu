@@ -1,0 +1,16 @@
+# ── Interface ─────────────────────────────────────────────────────────────────
+streamlit>=1.28.0
+
+# ── Orquestração RAG ──────────────────────────────────────────────────────────
+llama-index>=0.10.0
+llama-index-core>=0.10.0
+llama-index-embeddings-huggingface>=0.2.0
+llama-index-llms-ollama>=0.10.0
+llama-index-llms-openai>=0.2.0          # backend opcional via Maritaca API
+
+# ── Vector store ──────────────────────────────────────────────────────────────
+chromadb>=0.4.18
+
+# ── Embeddings ────────────────────────────────────────────────────────────────
+sentence-transformers>=2.2.2
+torch>=2.0.0
