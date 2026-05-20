@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ChatCapitu Annotated Dataset Schema",
+  "description": "Estrutura de cada item do dataset anotado do romance Dom Casmurro, com mapeamento de comentários críticos das cinco vozes canônicas curadas (Candido, Bosi, Gledson, Souza, Guimarães).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["capitulo", "titulo", "paragrafo"],
+    "properties": {
+      "capitulo": {
+        "type": "string",
+        "pattern": "^capitulo_[0-9]{3}$",
+        "description": "Identificador do capítulo no formato 'capitulo_NNN'."
+      },
+      "titulo": {
+        "type": "string",
+        "description": "Título original do capítulo (ex: 'Capítulo I - Do Título')."
+      },
+      "paragrafo": {
+        "type": "string",
+        "description": "Texto integral do parágrafo, mantendo a grafia original."
+      },
+      "tags": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Tags temáticas (ex: 'ironia', 'narrador-nao-confiavel', 'capitu')."
+      },
+      "comentario_autoral": {
+        "type": "string",
+        "description": "Marcador autoral que sinaliza a presença do parágrafo no corpus para o retrieval. Não substitui o juízo crítico, que é fornecido pelos clusters críticos."
+      },
+      "comentario_critico": {
+        "type": "string",
+        "description": "Trecho selecionado de comentário da crítica literária canônica (Antonio Candido, Alfredo Bosi, John Gledson, Eneida de Souza ou Hélio Guimarães)."
+      },
+      "autor_critico": {
+        "type": "string",
+        "description": "Nome do crítico literário associado ao comentario_critico."
+      }
+    }
+  }
+}
