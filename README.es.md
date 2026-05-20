@@ -110,9 +110,13 @@ Detalles en [docs/METODOLOGIA.md](docs/METODOLOGIA.md).
 
 ## 👩‍💻 Sobre la autora
 
-**Flávia Chacon**
-Científica de Datos Especialista, trabajando con IA Generativa | Profesora de Data Science y Analytics
-MBA en Data Science y Analytics — USP/Esalq
+**Flávia Chacon**<br>
+Científica de Datos Especialista, trabajando con IA Generativa<br>
+Profesora de Data Science y Analytics<br>
+MBA en Data Science y Analytics — USP/Esalq<br>
+Magíster en Ciencias Sociales — Universidad de Brasilia (UnB)<br>
+Especialización en Gestión Estratégica de Políticas Públicas — Universidad de Campinas (Unicamp)<br>
+Licenciatura en Relaciones Internacionales — UnB
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?logo=linkedin&style=flat)](https://www.linkedin.com/in/nemechacon/)
 
