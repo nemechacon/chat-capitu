@@ -129,7 +129,7 @@ Si referencias este proyecto en un trabajo académico:
 ```bibtex
 @misc{chacon2025chatcapitu,
   author       = {Chacon, Flávia Mariane Neme},
-  title        = {ChatCapitu - LLMs como ferramenta de mediação de leitura e engajamento no clássico literário machadiano},
+  title        = {ChatCapitu — LLMs como ferramenta de mediação de leitura e engajamento no clássico literário machadiano},
   year         = {2025},
   howpublished = {\url{https://github.com/nemechacon/chat-capitu}},
   note         = {Proyecto Final, MBA en Data Science y Analytics, USP/Esalq}

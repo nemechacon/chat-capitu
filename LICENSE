@@ -1,0 +1,38 @@
+MIT License with Academic Attribution Clause
+
+Copyright (c) 2025 Flávia Mariane Neme Chacon
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+2. ACADEMIC ATTRIBUTION CLAUSE
+   Any academic publication, thesis, dissertation, scientific paper, technical
+   report, blog post, presentation, or derivative work that uses, references,
+   or is substantially inspired by this Software MUST cite the original work
+   as follows:
+
+       Chacon, F. M. N. (2025). ChatCapitu — LLMs como ferramenta de
+       mediação de leitura e engajamento no clássico literário machadiano.
+       Trabalho de Conclusão de Curso, MBA em Data Science e Analytics,
+       USP/Esalq. https://github.com/nemechacon/chat-capitu
+
+   The CITATION.cff file in this repository provides machine-readable
+   citation metadata.
+
+3. The annotated dataset combining Dom Casmurro chapters with literary
+   criticism (a core research contribution of the MBA TCC) is NOT distributed
+   with this Software and remains the intellectual property of the author.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

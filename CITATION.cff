@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "ChatCapitu — LLMs como ferramenta de mediação de leitura e engajamento no clássico literário machadiano"
+message: "Se este software é referenciado em sua pesquisa, por favor cite-o conforme abaixo."
+type: software
+authors:
+  - given-names: Flávia Mariane Neme
+    family-names: Chacon
+    orcid: "https://orcid.org/0009-0004-9695-4198"
+    affiliation: "USP/Esalq — MBA em Data Science e Analytics"
+repository-code: "https://github.com/nemechacon/chat-capitu"
+abstract: >-
+  ChatCapitu é uma aplicação de IA generativa que combina LLMs em português,
+  RAG (Retrieval-Augmented Generation) e crítica literária para auxiliar
+  leitores na interpretação crítica do romance "Dom Casmurro" (1899) de
+  Machado de Assis. Trabalho de Conclusão de Curso do MBA em Data Science
+  e Analytics da USP/Esalq.
+keywords:
+  - retrieval-augmented-generation
+  - natural-language-processing
+  - portuguese-nlp
+  - literary-analysis
+  - machado-de-assis
+  - dom-casmurro
+license: MIT
+license-url: "https://github.com/nemechacon/chat-capitu/blob/main/LICENSE"
+year: 2025
